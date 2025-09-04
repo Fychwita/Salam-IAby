@@ -31,7 +31,7 @@ const Register = () => {
 
     try {
       console.log("Envoi des données:", formData); // Log des données envoyées
-      const res = await axios.post("http://localhost:5000/api/register", {
+      const res = await axios.post("http://localhost:8000/api/register", {
         nom: formData.nom,
         email: formData.email,
         password: formData.password
@@ -46,7 +46,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-xl shadow-md w-[90%] max-w-md border">
+      <div className="bg-white p-8 rounded-xl shadow-md mt-[-90px] w-[90%] max-w-md border">
         <h2 className="text-center text-xl font-semibold text-green-700 mb-4">S'inscrire</h2>
 
         <button className="w-full bg-purple-100 text-gray-700 py-2 rounded-md flex items-center justify-center gap-2 mb-4">

@@ -18,7 +18,7 @@ const Login = () => {
     setMessage("");
     setIsLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/login", formData);
+      const res = await axios.post("http://localhost:8000/api/login", formData);
       if (res.status === 200) {
         // Stocker l'email de l'utilisateur dans le localStorage
         localStorage.setItem('userEmail', formData.email);
@@ -34,7 +34,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-xl shadow-md w-[90%] max-w-md border">
+      <div className="bg-white p-8 rounded-xl mt-[-100px] shadow-md w-[90%] max-w-md border">
         <h2 className="text-center text-xl font-semibold text-green-700 mb-4">Connexion</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <div className="relative">
@@ -79,6 +79,9 @@ const Login = () => {
           </button>
         </form>
         {message && <p className="text-center mt-4 text-sm text-red-500">{message}</p>}
+        <p className="text-center mt-4 text-sm">
+          Vous n'avez pas un compte ? <a href="/register" className="text-purple-700 font-semibold">S'inscrire</a>
+        </p>
       </div>
     </div>
   );

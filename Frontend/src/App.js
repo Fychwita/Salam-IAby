@@ -30,6 +30,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import Apropos from "./components/Apropos";
+import Explore from "./components/Explore";
 
 export default function App() {
   return (
@@ -48,7 +49,7 @@ export default function App() {
         <Route path="/explorer" element={
           <>
             <Header />
-            <div className="p-10">Page Explorer</div>
+            <Explore/>
           </>
         } />
         <Route path="/apropos" element={
